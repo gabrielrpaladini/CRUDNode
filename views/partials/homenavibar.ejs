@@ -3,26 +3,32 @@
 
     <div style="display: flex;">
 
-    <a class="navbar-brand" href="/">
-        GuiaPress
-    </a>
+        <a class="navbar-brand" href="/">
+            GuiaPress
+        </a>
 
-    <ul class="navbar-nav" style="text-align: left;">
+        <ul class="navbar-nav" style="text-align: left;">
 
-        <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-        </li>
-
-    </ul>
-    <ul class="navbar-nav" style="text-align: left; padding-left: 8px;">
-
-        <% categories.forEach(category => { %>
             <li class="nav-item">
-                <a class="nav-link" href="<%= category.slug %>"><%= category.title %></a>
+                <a class="nav-link" href="/">Home</a>
             </li>
-        <% }) %>
-    </ul>
-    
+
+        </ul>
+        <ul class="navbar-nav" style="text-align: left; padding-left: 8px;">
+
+            <% categories.forEach(category => { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= category.slug %>"><%= category.title %></a>
+                </li>
+            <% }) %>
+        </ul>
+        <ul class="navbar-nav" style="text-align: left; padding-left: 8px;">
+            
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+        </ul>
+        
     </div>
 
 </nav>
