@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
+const session = require('express-session');
 const app = express();
 
 const connection = require("./database/database");
@@ -28,6 +29,13 @@ app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+app.use(session({
+    secret: Math.random(),
+    cookie: {
+        maxAge: 3000000
+    }
+}));
 
 app.use("/", categoriesController);
 app.use("/", articlesController);
