@@ -8,9 +8,19 @@
     </a>
 
     <ul class="navbar-nav" style="text-align: left;">
+
         <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
         </li>
+
+    </ul>
+    <ul class="navbar-nav" style="text-align: left; padding-left: 8px;">
+
+        <% categories.forEach(category => { %>
+            <li class="nav-item">
+                <a class="nav-link" href="<%= category.slug %>"><%= category.title %></a>
+            </li>
+        <% }) %>
     </ul>
     
     </div>
