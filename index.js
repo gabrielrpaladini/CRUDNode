@@ -6,9 +6,11 @@ const connection = require("./database/database");
 
 const categoriesController = require("./categories/CategoriesController");
 const articlesController = require("./article/ArticlesController");
+const usersController = require("./user/usersController");
 
 const Article = require("./article/Article");
 const Category = require("./categories/Category");
+const User = require("./user/User");
 
 connection
     .authenticate()
@@ -29,6 +31,7 @@ app.use(bodyParser.json());
 
 app.use("/", categoriesController);
 app.use("/", articlesController);
+app.use("/", usersController);
 
 app.get("/", (req, res) => {
     Article.findAll({

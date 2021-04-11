@@ -1,0 +1,45 @@
+<%- include('../../partials/header') %>
+
+<body>
+    <%- include('../../partials/navibar') %>
+    <div class="container">
+
+        <hr>
+        <h2>Usuários</h2>
+        <a class="btn btn-success" href="/admin/categories/create">Criar novo usuário</a>
+        <hr>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= user.email %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        
+    </div>
+
+</body>
+
+<%- include('../../partials/footer') %>
+
+<script>
+    function confirmarDelecao(event, form) {
+        event.preventDefault();
+        let decision = confirm("Você confirma a deleção da categoria?");
+
+        if(decision) {
+            form.submit();
+        }
+    }
+</script>
